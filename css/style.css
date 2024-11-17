@@ -1,0 +1,25 @@
+#deleteIcon{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+    cursor: pointer;
+}
+#deleteIcon:hover{
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    
+}
+#taskTextP{
+    cursor: pointer;
+}
+.valid{
+    display: none;
+}
+.invalid{
+    display: block;
+    color: red;
+}

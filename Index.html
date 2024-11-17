@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/favicon.png">
+    <title>DevFolio Bootstrap Portfolio Template - Index</title>
+    <base href="./Index.html">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/animation.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="bg-body-secondary py-4 fw-semibold">
+        <div class="container fs-3 text-dark text-center">
+            <span>TO<span class="text-danger">D<i class="fa-regular fa-check-circle fs-4"></i></span></span>
+        </div>
+    </header>
+    <section class="min-vh-100 bg-light">
+        <div class="container m-auto">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 pt-5">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control rounded-start-pill" placeholder="Enter Your Task"
+                            aria-label="Recipient's username" aria-describedby="createB" id="input"
+                            onkeyup="keyUpCheck()">
+
+                        <button class="btn btn-outline-secondary rounded-end-pill bg-success text-white" type="button"
+                            id="createB" onclick="run()">Create</button>
+                        <div id="validate" class="ps-3 invalid-feedback">Please Enter Task</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row " id="out">
+               
+            </div>
+        </div>
+    </section>
+    <!-- main js -->
+    <script src="./js/script.js"></script>
+    <!-- bootstrap js -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
