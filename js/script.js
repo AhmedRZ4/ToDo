@@ -2,8 +2,9 @@ let tasks = [];
 const input = document.getElementById("input");
 const out = document.getElementById("out");
 const validate = document.getElementById("validate");
-input.addEventListener("keypress", function(event){
-    if(event.key=="Enter"){
+getLocal();
+input.addEventListener("keypress", function (event) {
+    if (event.key == "Enter") {
         run();
     }
 });
@@ -60,11 +61,21 @@ function display() {
 }
 function deleteTask(index) {
     tasks.splice(index, 1);
+    addLocal();
     display();
 }
 function changeStates(index) {
     tasks[index].states = !tasks[index].states;
+    addLocal();
     display();
 }
 
+function addLocal() {
+    localStorage.setItem("data", JSON.stringify(tasks));
+}
+function getLocal() {
+    if (localStorage.getItem(JSON.parse("data")) != null) {
+        tasks = localStorage.getItem(JSON.parse("data"));
+    }
 
+}
