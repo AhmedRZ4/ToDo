@@ -3,8 +3,8 @@ const input = document.getElementById("input");
 const out = document.getElementById("out");
 const validate = document.getElementById("validate");
 getLocal();
-input.addEventListener("keypress", function (event) {
-    if (event.key == "Enter") {
+input.addEventListener("keypress", function(event){
+    if(event.key=="Enter"){
         run();
     }
 });
@@ -36,7 +36,8 @@ function addTask() {
         name: input.value,
         states: false
     }
-    tasks.push(task)
+    tasks.push(task);
+    addLocal();
     input.value = "";
 
 }
@@ -70,12 +71,12 @@ function changeStates(index) {
     display();
 }
 
-function addLocal() {
-    localStorage.setItem("data", JSON.stringify(tasks));
+function addLocal(){
+    localStorage.setItem("data",JSON.stringify(tasks));
 }
-function getLocal() {
-    if (localStorage.getItem(JSON.parse("data")) != null) {
-        tasks = localStorage.getItem(JSON.parse("data"));
+function getLocal(){
+    if(localStorage.getItem("data")!=null){
+        tasks=JSON.parse(localStorage.getItem("data"));
+        display();
     }
-
 }
