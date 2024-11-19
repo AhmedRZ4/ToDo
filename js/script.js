@@ -33,7 +33,7 @@ function keyUpCheck() {
 function addTask() {
 
     let task = {
-        name: input.value,
+        name: input.value.trim(),
         states: false
     }
     tasks.push(task);
