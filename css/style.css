@@ -1,4 +1,4 @@
-#deleteIcon{
+#deleteIcon , #editIcon{
     height: 30px;
     width: 30px;
     display: flex;
@@ -8,13 +8,12 @@
     cursor: pointer;
      border-radius: 50%;
 }
-#deleteIcon:hover{
+#deleteIcon:hover ,#editIcon:hover{
     background-color: red;
-   
     color: white;
     
 }
-#taskTextP{
+#innerInput input{
     cursor: pointer;
 }
 .valid{
