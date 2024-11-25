@@ -51,9 +51,12 @@ function display() {
                     <div style="overflow:auto">
                     <input class="form-control-plaintext my-0 ${tasks[i].states == true ? `text-decoration-line-through` : ``}" 
                     readonly
-                    style="overflow-wrap: break-word;" id="taskTextI-${i}" onclick="changeStates(${i})" value="${tasks[i].name}">
+                    style="overflow-wrap: break-word;" id="taskTextI-${i}" ondblclick="editTaskIcon(${i})" value="${tasks[i].name}">
                     </div>
                     <div class="d-flex">
+                    <div id="editIcon" class="p-1" onclick="changeStates(${i})">
+                    ${tasks[i].states == true ? `<i class=" fa-solid fa-circle-check"></i>` : `<i class="fa-regular fa-circle"></i>`}   
+                    </div>
                     <div id="editIcon" class="p-1" onclick="editTaskIcon(${i})">
                         <i class="fa-sharp-duotone fa-solid fa-pen-nib"></i>
                     </div>
