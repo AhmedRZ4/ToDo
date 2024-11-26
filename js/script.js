@@ -88,11 +88,9 @@ function addEvent(index) {
     inputId.addEventListener("click", (event) => {
         if (inputId.classList.contains("form-control")) {
             event.preventDefault();
-            console.log("preventDefault");
         }
         else{
             changeStates(index);
-            console.log(`else-${index}`);
         }
     });
 }
