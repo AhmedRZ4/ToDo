@@ -50,11 +50,11 @@ function display() {
                     class="alert alert-warning rounded-pill d-flex justify-content-between align-items-center">
                     <div style="overflow:auto">
                     <input class="form-control-plaintext my-0 ${tasks[i].states == true ? `text-decoration-line-through` : ``}" 
-                    readonly
-                    style="overflow-wrap: break-word;" id="taskTextI-${i}" onclick="changeStates(${i})" value="${tasks[i].name}">
+                    readonly ondblclick="editTaskIcon(${i})"
+                    style="overflow-wrap: break-word;" id="taskTextI-${i}" value="${tasks[i].name}">
                     </div>
                     <div class="d-flex">
-                    <div id="editIcon" class="p-1" onclick="changeStates(${i})">
+                    <div id="changeIcon" class="p-1" onclick="changeStates(${i})">
                     ${tasks[i].states == true ? `<i class=" fa-solid fa-circle-check"></i>` : `<i class="fa-regular fa-circle"></i>`}   
                     </div>
                     <div id="editIcon" class="p-1" onclick="editTaskIcon(${i})">
@@ -82,8 +82,18 @@ function addEvent(index) {
     const inputId = getInputId(index);
     inputId.addEventListener("blur", () => {
         inputId.classList.replace("form-control", "form-control-plaintext");
-       inputId.readOnly = true;
+        inputId.readOnly = true;
         editValue(index);
+    });
+    inputId.addEventListener("click", (event) => {
+        if (inputId.classList.contains("form-control")) {
+            event.preventDefault();
+            console.log("preventDefault");
+        }
+        else{
+            changeStates(index);
+            console.log(`else-${index}`);
+        }
     });
 }
 function editTaskIcon(index) {
@@ -95,7 +105,7 @@ function editTaskIcon(index) {
     } else {
         editValue(index);
         editV.classList.replace("form-control", "form-control-plaintext");
-       editV.readOnly = true;
+        editV.readOnly = true;
     }
 }
 function editValue(index) {
